@@ -1,0 +1,59 @@
+<ion-header>
+  <ion-toolbar color="warning">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Añadir Receta</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-item>
+    <ion-label position="floating" > Nombre:</ion-label>
+    <ion-input type="text" name="nombre" [(ngModel)]="receta.nombre"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating" > Descripcion:</ion-label>
+    <ion-input type="text" name="descripcion" [(ngModel)]="receta.descripcion"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating" > Tiempo de preparacion:</ion-label>
+    <ion-input type="text" name="tiempo" [(ngModel)]="receta.tiempo"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Categoria: </ion-label>
+    <ion-select [(ngModel)]="receta.categoria" name="categoria" placeholder="Selecciona uno">
+      <ion-select-option value="pescado">Pescado</ion-select-option>
+      <ion-select-option value="carne">Carne</ion-select-option>
+      <ion-select-option value="vegetales">Vegetales</ion-select-option>
+      <ion-select-option value="aves">Aves</ion-select-option>
+      <ion-select-option value="postres">Postres</ion-select-option>
+      <ion-select-option value="huevo">Huevos</ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating" > Ingredientes:</ion-label>
+    <ion-input type="text" name="ingrediente" [(ngModel)]="receta.ingrediente"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating" > Procedimiento:</ion-label>
+    <ion-input type="text" name="paso" [(ngModel)]="receta.pasos"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <h6>Foto:</h6><br>
+    <ion-input type="file" accept=".png, .jpg" (change)="uploadImage($event)"></ion-input>
+  </ion-item>
+
+  <br>
+  <ion-button color="success" expand="block" (click)="saveRecetas()">Guardar</ion-button>
+
+  <br>
+  <ion-button color="danger" expand="block" routerLink="/recetas">Cancelar</ion-button>
+</ion-content>

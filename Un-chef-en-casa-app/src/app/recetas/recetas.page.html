@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-toolbar color="warning">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title class="titulo">Recetas</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!--Card View de presentacion-->
+  <ion-card id="targetaPre">
+    <img src="https://sirviella.com/noticias/wp-content/uploads/2018/12/cocina_industrial-845x321.jpg">
+    <div id="card-title">Cocina Gourmet</div>
+    <div id="card-subtitle">Recetas del corazon</div>
+  </ion-card>
+  <!--Card View de presentacion-->
+
+  <!--Lista de recetas-->
+    <ion-list id="listaReceta">
+      <ion-card id="targetaReceta" *ngFor="let receta of recetas">
+        <ion-item id="idReceta" no-lines>
+          <ion-avatar item-start>
+            <img src="{{receta.foto}}">
+          </ion-avatar>
+            <h2>{{receta.nombre}}</h2>
+            <p>{{receta.descripcion}}</p>
+        </ion-item>
+      </ion-card>
+    </ion-list>
+  <!--Lista de recetas-->
+
+  <!--Boton nueva receta-->
+  <ion-fab horizontal="end" vertical="bottom" slot="fixed">
+    <ion-fab-button color="success" routerLink="/dato">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+  <!--Boton nueva receta-->
+
+</ion-content>
