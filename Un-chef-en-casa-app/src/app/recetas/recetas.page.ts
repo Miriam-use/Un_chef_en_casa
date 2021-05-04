@@ -16,10 +16,6 @@ export class RecetasPage implements OnInit {
   recetas = [];
   receta = {id: null, nombre:null, tiempo:null, categoria:null, ingrediente:null, pasos:null, descripcion:null, foto:null};
 
-  tabs: any;
-  tabIndex: number;
-  reorder: boolean;
-
   constructor(
     private router : Router, 
     public authService : AuthService, 

@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { AngularFireDatabase } from '@angular/fire/database';
 import { AuthService,  } from "../services/auth.service";
 import { Router } from '@angular/router';
-import { AngularFireStorageModule } from "@angular/fire/storage";
 
 @Component({
   selector: 'app-dato',
@@ -18,8 +17,7 @@ export class DatoPage implements OnInit {
 
   constructor(private router : Router, 
     private db: AngularFireDatabase, 
-    public authService : AuthService,
-    private storage:AngularFireStorageModule) { 
+    public authService : AuthService) { 
     this.show = false; //Inicializamos la variable a false, para que por defecto no se muestren los campos
     this.idSelected = null; // Inicializamos a null idselected, que significará que no tenemos ningun alumno existente selecionada.
 
@@ -81,11 +79,6 @@ export class DatoPage implements OnInit {
 
   uploadImage(e){
     console.log('subir', e);
-    const id = Math.random().toString(36).substring(2);
-    const file = e.target.files[0];
-    const filePath = `upload/${id}`;
-    const ref = this.storage.ref(filePath);
-    const task = this.storage.upload(filePath, file);
   }
 
 }
