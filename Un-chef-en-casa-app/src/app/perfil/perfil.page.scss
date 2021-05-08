@@ -1,4 +1,14 @@
-.titulo{
+.tite{
+    color: black;
+    font-size: 2em;
+    text-transform: uppercase;
+    left: 50%;
+    top: 50%;
+    transform: translateX(15%);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.titulos{
     font-family: 'Josefin Slab', serif;
     font-size: 30px;
     margin: 0px;

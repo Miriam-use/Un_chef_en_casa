@@ -21,7 +21,10 @@
       <ion-card id="targetaReceta" *ngFor="let receta of recetas">
         <ion-item id="idReceta" no-lines>
           <ion-avatar item-start>
-            <img src="{{receta.foto}}">
+            <img *ngIf="receta.foto != null else fot" src="{{receta.foto}}">
+            <ng-template #fot>
+              <img src="https://sirviella.com/noticias/wp-content/uploads/2018/12/cocina_industrial-845x321.jpg">
+            </ng-template>
           </ion-avatar>
             <h2>{{receta.nombre}}</h2>
             <p>{{receta.descripcion}}</p>

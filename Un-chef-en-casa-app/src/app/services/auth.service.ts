@@ -4,6 +4,7 @@ import { Router } from "@angular/router";
 import { AngularFirestore } from "@angular/fire/firestore";
 import * as firebase from 'firebase/app';
 import { AngularFireDatabase } from '@angular/fire/database';
+import { TaskI } from '../models/task.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -63,4 +64,34 @@ public getRecetas(id: string){
 public removeRecetas(id: string){
   this.afDB.database.ref('recetas/'+id).remove();
 }
+
+//crud
+
+create(todo: TaskI) {
+  return this.db.collection('receta').add(todo);
+}
+
+getTasks() {
+  return this.db.collection('receta').snapshotChanges();
+}
+
+getTask(id) {
+  return this.db.collection('receta').doc(id).valueChanges();
+}
+
+update(id, todo: TaskI) {
+  this.db.collection('receta').doc(id).update(todo)
+    .then(() => {
+      this.router.navigate(['/recetas']);
+    }).catch(error => console.log(error));;
+}
+
+delete(id: string) {
+  this.db.doc('receta/' + id).delete();
+}
+
+getUseAuth(){
+  return this.AFauth.authState
+}
+
 }

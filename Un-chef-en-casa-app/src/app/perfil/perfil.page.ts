@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService,  } from "../services/auth.service";
 
 @Component({
   selector: 'app-perfil',
@@ -7,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PerfilPage implements OnInit {
   
-  constructor() { }
+  name: string;
+  photo: string;
+  email: string;
+
+  constructor(public authService : AuthService) { }
 
   ngOnInit() {
+    this.authService.getUseAuth().subscribe(user => {
+      this.name = user.displayName;
+      this.email = user.email;
+      this.photo = user.photoURL;
+    })
   }
 
 }
