@@ -48,7 +48,7 @@ http://localhost:8100/
 - AngularFire2 - Angular binding for Firebase.
 
 ## Humble documentation
-https://docs.google.com/document/d/1M7PFaeKbkbrHJM1D3io2zP3ho5Jbf0u9c0cTur8Kon4/edit?usp=sharing
+
 
 ## Authors and Participants
 - Miriam Mateos - mimais95@gmail.com - [GitHub](https://github.com/Miriam-use)
