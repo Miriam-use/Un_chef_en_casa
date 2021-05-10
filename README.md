@@ -7,7 +7,7 @@ El proyecto fué generado con Ionic CLI version 4.12.0.
 Como en casa es una aplicación que permite a individuos particulares (Chefs) crear Mesas virtuales para ofrecer comidas fabricadas por ellos mismos a otros usuarios registrados en la plataforma. Un usuario que se inscribe en una mesa virtual se lo conoce como Comensal. Todos los individuos registrados pueden tanto ingresar a una mesa virtual creada por otro usuario así como también crear sus propias mesas virtuales.
 
 <h2>Features</h2>
-Registro de usuario al sistema con posibilidad de seleccionar una foto de perfil utilizando la cámara del dispositivo o bien seleccionando un avatar de los disponibles en la aplicación.
+<ls>Registro de usuario al sistema con posibilidad de seleccionar una foto de perfil utilizando la cámara del dispositivo o bien seleccionando un avatar de los disponibles en la aplicación.
 Creación de mesas virtuales desde la pestaña “Crear mesa virtual” con posibilidad de seleccionar una foto del plato capturada con la cámara del dispositivo.
 Posibilidad de ingresar a una mesa virtual creada por otro usuario. Las mesas virtuales que una persona crea, no son visibles por el en el feed (pestaña “Inicio”), pero si son visibles por otros usuarios.
 Posibilidad de consultar las mesas virtuales creadas por un usuario desde la opción “Ver mis mesas virtuales” y de eliminar una mesa deslizando hacia la izquierda.
