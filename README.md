@@ -51,7 +51,4 @@ http://localhost:8100/
 https://docs.google.com/document/d/1M7PFaeKbkbrHJM1D3io2zP3ho5Jbf0u9c0cTur8Kon4/edit?usp=sharing
 
 ## Authors and Participants
-- Arrúa Luciano - Initial work - lucianorarrua@gmail.com - GitHub
-- Amarillo Leandro - Initial work - leandroamarillo95@gmail.com - GitHub
-- Bernal Germán - Initial work - bernalgermanignacio@gmail.com
-Paradiso Luciano - Initial work - lucianogparadiso@gmail.com
+- Miriam Mateos - mimais95@gmail.com - [GitHub](https://github.com/Miriam-use)
