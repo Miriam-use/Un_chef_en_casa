@@ -33,3 +33,23 @@ Una vez vinculada la aplicación de firebase a nuestro proyecto, podemos dirigir
 ```
 ionic serve
 ```
+Luego es posible ingresar al sitio web desde la siguiente URL:
+```
+http://localhost:8100/
+```
+
+## Built With
+- Angular 7 - Framework SPA.
+- Ionic 4 - Hybrid mobile application framework.
+- Capacitor 1.0 Beta - Cross-Platform App Runtime
+- Firebase - Backend service that provides data storage, file storage and authentication.
+- AngularFire2 - Angular binding for Firebase.
+
+## Humble documentation
+https://docs.google.com/document/d/1M7PFaeKbkbrHJM1D3io2zP3ho5Jbf0u9c0cTur8Kon4/edit?usp=sharing
+
+## Authors and Participants
+- Arrúa Luciano - Initial work - lucianorarrua@gmail.com - GitHub
+- Amarillo Leandro - Initial work - leandroamarillo95@gmail.com - GitHub
+- Bernal Germán - Initial work - bernalgermanignacio@gmail.com
+Paradiso Luciano - Initial work - lucianogparadiso@gmail.com
