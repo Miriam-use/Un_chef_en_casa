@@ -24,3 +24,12 @@ Para poder ejecutar la aplicación se requiere del siguiente software:
 - [Ionic CLI](https://ionicframework.com/docs/cli) - Interfaz de línea de comandos para Ionic.
 
 Adicionalmente, para poder utilizar el proyecto se requiere crear una aplicación desde la consola de Firebase.
+
+## Installing
+Para que el sitio web funcione, debemos dirigirnos al archivo src/environments/environment.ts dentro del proyecto y completar la variable “firebase” con los datos que nos proporciona la aplicación creada desde la consola de Firebase. A continuación se puede ver como obtener los datos (recordar que la aplicación creada en firebase debe ser una aplicación web):
+[https://user-images.githubusercontent.com/23145218/58391364-faaabd80-800b-11e9-8482-3ae66baec2b6.gif](https://user-images.githubusercontent.com/23145218/58391364-faaabd80-800b-11e9-8482-3ae66baec2b6.gif)
+
+Una vez vinculada la aplicación de firebase a nuestro proyecto, podemos dirigirnos a la raíz del proyecto y ejecutar un servidor de desarrollo con el siguiente comando:
+```
+ionic serve
+```
