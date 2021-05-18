@@ -65,7 +65,7 @@
                 <label for="lista" class="col-form-label col-3">Ingredientes</label>
                 <div class="col-6">
                   <!-- <input type="text" class="form-control" [(ngModel)]="usuario.correo" name="correo" required email #correo="ngModel"> -->
-                  <input type="text" class="form-control" [(ngModel)]="vehiculo.lista" name="lista" #lista="ngModel" required>
+                  <textarea type="text" class="form-control" [(ngModel)]="vehiculo.lista" name="lista" #lista="ngModel" required></textarea>
                 </div>
                 <div style="margin-left: 27%; margin-top: 2%;" class="alert alert-danger" *ngIf="lista.invalid && (lista.dirty || lista.touched)">
                   <div *ngIf="lista.errors.required">Rellene el campo por favor</div>
@@ -76,7 +76,7 @@
                 <label for="pasos" class="col-form-label col-3">Pasos</label>
                 <div class="col-6">
                   <!-- <input type="text" class="form-control" [(ngModel)]="usuario.correo" name="correo" required email #correo="ngModel"> -->
-                  <input type="text" class="form-control" [(ngModel)]="vehiculo.pasos" name="pasos" #pasos="ngModel" required>
+                  <textarea rows="6" cols="50" type="text" class="form-control" [(ngModel)]="vehiculo.pasos" name="pasos" #pasos="ngModel" required></textarea>
                 </div>
                 <div style="margin-left: 27%; margin-top: 2%;" class="alert alert-danger" *ngIf="pasos.invalid && (pasos.dirty || pasos.touched)">
                   <div *ngIf="pasos.errors.required">Rellene el campo por favor</div>

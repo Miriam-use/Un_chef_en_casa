@@ -59,7 +59,7 @@ export class RecetadetalleComponent implements OnInit {
       this.vehiculo = json.vehiculo;
       console.log(this.vehiculo);
       sessionStorage.setItem("recetaLongeado", JSON.stringify(this.vehiculo));
-      this.router.navigate(["/receta/detalles"]);
+      this.router.navigate(["/receta/tabla/pg/0"]);
       Swal.fire(`¡Actualizado!`, `Tus datos han sido actualizados`, "success");
     });
   }
@@ -67,7 +67,7 @@ export class RecetadetalleComponent implements OnInit {
   create(): void {
     this.vehiculoService.create(this.vehiculo).subscribe(
       vehiculo => {
-        this.router.navigate(["/receta/detalles"]);
+        this.router.navigate(["/receta/tabla/pg/0"]);
         Swal.fire(`Nuevo Receta`, `Receta creado`, "success");
       },
       err => {

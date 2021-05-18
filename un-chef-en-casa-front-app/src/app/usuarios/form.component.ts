@@ -84,7 +84,7 @@ export class FormComponent implements OnInit {
   create():void{
     this.usuarioService.create(this.usuario).subscribe(
       usuario=>{
-        this.router.navigate(['/usuarios']);
+        this.router.navigate(['/usuarios/login']);
         Swal.fire(`Nuevo usuario`,`Usuario ${usuario.dasatos} creado`, 'success')
       },
       err=>{

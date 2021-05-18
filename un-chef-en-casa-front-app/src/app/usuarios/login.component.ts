@@ -31,7 +31,7 @@ export class LoginComponent implements OnInit {
       json=>{
         this.usuario=json.usuario;
         sessionStorage.setItem("usuariologueado",JSON.stringify(this.usuario));
-        this.router.navigate(['/receta/detalles'])
+        this.router.navigate(['/receta/tabla/pg/0'])
         Swal.fire(`¡Bienvenido ${json.usuario.dasatos}!`,`${json.mensaje}`, 'success');
       },
       err=>{

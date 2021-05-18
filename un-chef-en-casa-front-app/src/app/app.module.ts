@@ -58,7 +58,7 @@ const routes: Routes=[
   {path:'recetadetalle/:id',component:RecetadetalleComponent},
   {path:'receta',component:RecetalistComponent},
   {path:'favorito',component:FavoritoComponent},
-  {path:'receta/detalles',component:RecetasComponent},
+  {path:'receta/tabla/pg/:pagina',component:RecetasComponent},
   {path:'receta/detalles/:id',component:DetallesrecetasComponent}
 ]
 
