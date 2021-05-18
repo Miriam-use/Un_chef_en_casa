@@ -1,0 +1,149 @@
+[
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "viajeId",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"internalType": "string",
+				"name": "ciaId",
+				"type": "string"
+			},
+			{
+				"indexed": false,
+				"internalType": "address",
+				"name": "userAddress",
+				"type": "address"
+			},
+			{
+				"indexed": false,
+				"internalType": "bool",
+				"name": "eco",
+				"type": "bool"
+			},
+			{
+				"indexed": false,
+				"internalType": "string",
+				"name": "facturaId",
+				"type": "string"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "km",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"internalType": "string",
+				"name": "hashProveedor",
+				"type": "string"
+			},
+			{
+				"indexed": false,
+				"internalType": "string",
+				"name": "huellaCO2",
+				"type": "string"
+			}
+		],
+		"name": "NuevoViaje",
+		"type": "event"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "ciaId",
+				"type": "string"
+			},
+			{
+				"internalType": "address",
+				"name": "userAddress",
+				"type": "address"
+			},
+			{
+				"internalType": "bool",
+				"name": "eco",
+				"type": "bool"
+			},
+			{
+				"internalType": "string",
+				"name": "facturaId",
+				"type": "string"
+			},
+			{
+				"internalType": "uint32",
+				"name": "km",
+				"type": "uint32"
+			},
+			{
+				"internalType": "string",
+				"name": "hashProveedor",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "huellaCO2",
+				"type": "string"
+			}
+		],
+		"name": "registrarViaje",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "viajes",
+		"outputs": [
+			{
+				"internalType": "string",
+				"name": "ciaId",
+				"type": "string"
+			},
+			{
+				"internalType": "address",
+				"name": "userAddress",
+				"type": "address"
+			},
+			{
+				"internalType": "bool",
+				"name": "eco",
+				"type": "bool"
+			},
+			{
+				"internalType": "string",
+				"name": "facturaId",
+				"type": "string"
+			},
+			{
+				"internalType": "uint32",
+				"name": "km",
+				"type": "uint32"
+			},
+			{
+				"internalType": "string",
+				"name": "hashProveedor",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "huellaCO2",
+				"type": "string"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	}
+]

@@ -1,0 +1,98 @@
+<div class="row">
+
+  <div class="col-1"></div>
+
+  <div class="col-10 row" id="fondo">
+
+    <div class="col-12 row">
+
+      <div class="col-5">
+
+        <div class="row">
+          <h1 class="mt-5 ml-4">Mi Huella Ecológica</h1>
+          <hr />
+        </div>
+
+        <div class="row">
+
+          <div class="col-5">
+
+            <div class="mt-5">
+              <div><span class="">Viajes realizados</span></div>
+              <div class="valor ml-5 mt-4">{{ dashboard.totalviajes }}</div>
+            </div>
+
+            <div class="mt-5">
+              <div><span class="">Viajes Ecologico:</span></div>
+              <div class="valor ml-5 mt-4">{{ dashboard.totalviajeseco }}</div>
+            </div>
+
+            <div class="mt-5">
+              <div><span class="">Viajes No Ecologicos</span></div>
+              <div class="valor ml-5 mt-4">{{ dashboard.totalviajesnoeco }}</div>
+            </div>
+
+          </div>
+
+          <div class="col-5">
+
+            <div class="mt-5">
+              <div><span class="">Kilometros Eco</span></div>
+              <div class="valor ml-5 mt-4">{{ dashboard.kmeco }}</div>
+            </div>
+
+            <div class="mt-5">
+              <div><span class="">Kilometros CO2</span></div>
+              <div class="valor ml-5 mt-4">{{ dashboard.kmnoeco }}</div>
+            </div>
+
+            <div class="mt-5">
+              <div><span class ="">EcoCoins</span></div>
+              <div class="valor ml-5 mt-3">{{ dashboard.ecocoins }}<img class="img_EcoCOins " src="./assets/images/ecologico.svg " /></div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="col-7 rueda">
+        <div class="row">
+          <img src="./assets/images/sin.png "style="width:40px; margin-left:183px;">
+          <img src="./assets/images/ec.png "style="width:40px; margin-left:36px">
+          <img src="./assets/images/eb.png "style="width:40px; margin-left:24px">
+          <img src="./assets/images/eeco.png "style="width:40px; margin-left:25px">
+          <img src="./assets/images/e0.png "style="width:40px; margin-left:41px">
+        </div>
+        <canvas id="myChart">
+          {{ chart }}
+        </canvas>
+      </div>
+
+    </div>
+
+    <div class="col-12 row" style="margin-top: -70px;">
+
+      <div class="col-3" style="margin-right:45px;"></div>
+
+      <div class="row mt-2">
+
+        <div class="text-center" style="margin-right:200px;">
+          <img class="img_co2" src="./assets/images/nube.svg " />
+          <div class="mt-2"><span class="ml-1 spanvalor"> Contaminado</span></div>
+          <div class="valorhuellas">{{ dashboard.huellatotal }} Kg/CO2</div>
+        </div>
+
+        <div class="text-center">
+          <img class="img_co2" src="./assets/images/eco.svg " />
+          <div class="mt-2"><span class="ml-1 spanvalor"> Salvado</span></div>
+          <div class="valorhuellas">{{ dashboard.huellasalvada }} Kg/CO2<div>
+        </div>
+
+      </div>
+
+    </div>
+
+</div>

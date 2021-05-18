@@ -1,0 +1,49 @@
+#fondo{
+    background-color: white;
+    width:1000px;height:770px;
+    box-shadow: 2px 2px 5px #999;
+    border: solid 2px #0066A1;
+    border-radius: 3px;
+}
+span{
+    color:#0066A1;
+    font-size: 18px;
+}
+hr {
+    height: 4px;
+    width: 100%;
+    background-color: #0066A1;
+  }
+  .img_co2{
+    width: 100px;
+}
+.img_EcoCOins{
+    width: 40%;
+    margin-left: 18px;
+    margin-top: -15px;
+}
+#grafico{
+    margin-top: 130px;
+}
+h1{
+  Font-family: Copperplate, Copperplate Gothic Light, fantasy;
+  color:#0066A1;
+}
+.rueda{
+  margin-top: 100px;
+}
+.valor{
+  color:rgb(0, 172, 255);
+  margin-top: 0px;
+  margin-left: 10px;
+  font-size: 25px;
+}
+.spanvalor{
+  color:#0066A1;
+  font-size: 27px;
+}
+.valorhuellas{
+  font-size: 20px;
+  color:rgb(0, 172, 255);
+  margin-top: 10px;
+}

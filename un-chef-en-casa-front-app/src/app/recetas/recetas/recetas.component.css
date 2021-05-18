@@ -1,0 +1,32 @@
+.fondo{
+    /* background: rgba(255,255,255, 0.7); */
+    margin-top: 5px;
+    height: 300px;
+    width: 180%;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+    border-radius: 3px;
+  
+  }
+  img{
+    height: 80px;
+    width: 155px;
+    margin: 20px;
+  }
+  img:hover{
+    height: 95px;
+    width: 170px;
+  }
+  h1,h3{
+    color: #0066A1 ;
+    Font-family: Copperplate, Copperplate Gothic Light, fantasy;
+  }
+  hr {
+    height: 4px;
+    width: 100%;
+    background-color: #0066A1 ;
+  }
+  .divCentral{
+    display: inline-table;
+    height: 100%;
+    width: 100%;
+  }

@@ -1,0 +1,108 @@
+<div class="row col-12 text-center">
+
+    <div class="col-3"></div>
+    <div class="col-6 fondo text-center divCentral">
+  
+      <div class=" card-header" >
+        <h1 class="pt-3" *ngIf="!vehiculo.id else elseblock"><strong>Nueva Receta</strong></h1>
+        <ng-template #elseblock>
+          <h1 class="pt-3"><strong>Editar Receta</strong></h1>
+        </ng-template>
+        <hr />
+      </div>
+  
+      <div class="cad-body row col-12 text-center"> <!-- INICIO FORM -->
+        <div class="col-4"></div>
+        <div class="col-8">
+  
+          <form #formularioVehiculo="ngForm">
+  
+            <div class="form-group row mt-3">
+              <label for="titulo" class="col-form-label col-3">Titulo</label>
+              <div class="col-6">
+                <!-- <input type="text" class="form-control" [(ngModel)]="usuario.dasatos" name="dasatos" required minlength="3" #dasatos="ngModel"> -->
+                <input type="text" class="form-control" [(ngModel)]="vehiculo.titulo" name="titulo" #titulo="ngModel" required>
+              </div>
+              <div style="margin-left: 27%; margin-top: 2%;" class="alert alert-danger" *ngIf="titulo.invalid && (titulo.dirty || titulo.touched)">
+                <div *ngIf="titulo.errors.required">Rellene el campo por favor</div>
+              </div>
+            </div>
+  
+            <div class="form-group row">
+              <label for="detalle" class="col-form-label col-3">Descripcion</label>
+              <div class="col-6">
+                <!-- <input type="text" class="form-control" [(ngModel)]="usuario.correo" name="correo" required email #correo="ngModel"> -->
+                <input type="text" class="form-control" [(ngModel)]="vehiculo.detalle" name="detalle" #detalle="ngModel" required>
+              </div>
+              <div style="margin-left: 27%; margin-top: 2%;" class="alert alert-danger" *ngIf="detalle.invalid && (detalle.dirty || detalle.touched)">
+                <div *ngIf="detalle.errors.required">Rellene el campo por favor</div>
+              </div>
+            </div>
+  
+            <div class="form-group row">
+                <label for="tiempo" class="col-form-label col-3">Tiempo</label>
+                <div class="col-6">
+                  <!-- <input type="text" class="form-control" [(ngModel)]="usuario.correo" name="correo" required email #correo="ngModel"> -->
+                  <input type="text" class="form-control" [(ngModel)]="vehiculo.tiempo" name="tiempo" #tiempo="ngModel" required>
+                </div>
+                <div style="margin-left: 27%; margin-top: 2%;" class="alert alert-danger" *ngIf="tiempo.invalid && (tiempo.dirty || tiempo.touched)">
+                  <div *ngIf="tiempo.errors.required">Rellene el campo por favor</div>
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <label for="mesas" class="col-form-label col-3">Numero de Comensales</label>
+                <div class="col-6">
+                  <!-- <input type="text" class="form-control" [(ngModel)]="usuario.correo" name="correo" required email #correo="ngModel"> -->
+                  <input type="text" class="form-control" [(ngModel)]="vehiculo.mesas" name="mesas" #mesas="ngModel" required>
+                </div>
+                <div style="margin-left: 27%; margin-top: 2%;" class="alert alert-danger" *ngIf="mesas.invalid && (mesas.dirty || mesas.touched)">
+                  <div *ngIf="mesas.errors.required">Rellene el campo por favor</div>
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <label for="lista" class="col-form-label col-3">Ingredientes</label>
+                <div class="col-6">
+                  <!-- <input type="text" class="form-control" [(ngModel)]="usuario.correo" name="correo" required email #correo="ngModel"> -->
+                  <input type="text" class="form-control" [(ngModel)]="vehiculo.lista" name="lista" #lista="ngModel" required>
+                </div>
+                <div style="margin-left: 27%; margin-top: 2%;" class="alert alert-danger" *ngIf="lista.invalid && (lista.dirty || lista.touched)">
+                  <div *ngIf="lista.errors.required">Rellene el campo por favor</div>
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <label for="pasos" class="col-form-label col-3">Pasos</label>
+                <div class="col-6">
+                  <!-- <input type="text" class="form-control" [(ngModel)]="usuario.correo" name="correo" required email #correo="ngModel"> -->
+                  <input type="text" class="form-control" [(ngModel)]="vehiculo.pasos" name="pasos" #pasos="ngModel" required>
+                </div>
+                <div style="margin-left: 27%; margin-top: 2%;" class="alert alert-danger" *ngIf="pasos.invalid && (pasos.dirty || pasos.touched)">
+                  <div *ngIf="pasos.errors.required">Rellene el campo por favor</div>
+                </div>
+              </div>
+  
+            <!-- BOTONES --->
+            <div class="form-group row">
+              <div class="col-7">
+                <button class="btn btn-primary" role="button" (click)="create()" *ngIf="!vehiculo.id else elseBlock" [disabled]="!formularioVehiculo.form.valid">Crear</button>
+                <ng-template #elseBlock>
+                  <button class="btn btn-primary" role="button" (click)="update()" [disabled]="!formularioVehiculo.form.valid">Editar</button>
+                </ng-template> <!-- *ngIf="!vehiculo.id else elseBlock" -->
+                <!-- <ng-template #elseBlock>
+                  <button class="btn btn-light" role="button" (click)="update()"
+                    [disabled]="!formularioUsuario.form.valid">Editar</button>
+                </ng-template> -->
+              </div>
+            </div>
+  
+          </form>
+        </div>
+  
+      </div> <!-- FIN FORM -->
+  
+    </div>
+    <div class="col-3"></div>
+  
+  </div>

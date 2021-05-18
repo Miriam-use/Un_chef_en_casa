@@ -1,0 +1,27 @@
+/* You can add global styles to this file, and also import other style files */
+html{
+  min-height: 100%;
+  position: relative;
+}
+body{
+  margin:0;
+  margin-bottom: 60px;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  /* 
+  background-color:white;*/
+  background-image: url(https://i1.wp.com/www.infoposiciones.net/wp-content/uploads/modern-kitchen-with-wooden-tabletop-space-for-you-and-display-products-Large.jpg?fit=1620%2C1080&ssl=1&is-pending-load=1); 
+  background-size: cover;
+  color: black;
+
+}
+footer{
+  position: absolute; /* position: fixed; */
+  bottom: 0px;
+  height: 60px;
+  color: white;
+  width: 100%;
+
+}
+.wrap{
+  padding-bottom: 60px;
+}

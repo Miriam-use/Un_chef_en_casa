@@ -1,7 +1,0 @@
-{
-  "name": "alumno-APP",
-  "integrations": {
-    "capacitor": {}
-  },
-  "type": "angular"
-}

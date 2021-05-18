@@ -1,0 +1,28 @@
+.table{
+    background-color: white;
+    width: 80%;
+ }
+ 
+ .titulo{
+   color:#0066A1;
+   font-size: 25px;
+   margin-bottom: 15px;
+   Font-family: Copperplate, Copperplate Gothic Light, fantasy;
+ }
+ 
+ .linea{
+   background-color: #0066A1;
+   width: 100%;
+   height: 2px;
+ }
+ 
+ .titulofiltros{
+   color:#0066A1;
+   font-size: 19px;
+ }
+ 
+ .card1,.card2{
+     border:solid 2px #0066A1;
+     border-radius: 7px;
+     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+   }

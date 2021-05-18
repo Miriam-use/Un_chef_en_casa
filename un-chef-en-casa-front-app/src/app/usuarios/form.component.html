@@ -1,0 +1,86 @@
+<ul class="alert alert-danger" *ngIf="errores?.length>0">
+  <li *ngFor="let error of errores">{{error}}</li>
+</ul>
+<div class="row col-12 text-center">
+
+  <div class="col-3"></div>
+  <div class="card bg-info text-white p-2 text-center col-6">
+    <div class="card-header">{{titulo}}</div>
+    <div class="cad-body row col-12 text-center">
+      <div class="col-4"></div>
+      <div class="col-8">
+        <form #formularioUsuario="ngForm">
+        <div class="form-group row mt-3">
+          <label for="dasatos" class="col-form-label col-3">Nombre Usuario</label>
+          <div class="col-6">
+            <!-- <input type="text" class="form-control" [(ngModel)]="usuario.dasatos" name="dasatos" required minlength="3" #dasatos="ngModel"> -->
+            <input type="text" class="form-control" [(ngModel)]="usuario.dasatos" name="dasatos" #dasatos="ngModel">
+          </div>
+          <div class="alert alert-danger" *ngIf="dasatos.invalid && (dasatos.dirty || dasatos.touched)">
+            <div *ngIf="dasatos.errors.required">Rellene el campo por favor</div>
+            <div *ngIf="dasatos.errors.minlength">Debe de tener un mínimo de tres caracteres</div>
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <label for="correo" class="col-form-label col-3">Correo</label>
+          <div class="col-6">
+            <!-- <input type="text" class="form-control" [(ngModel)]="usuario.correo" name="correo" required email #correo="ngModel"> -->
+            <input type="text" class="form-control" [(ngModel)]="usuario.correo" name="correo" #correo="ngModel">
+          </div>
+          <div class="alert alert-danger" *ngIf="correo.invalid && (correo.dirty || correo.touched)">
+            <div *ngIf="correo.errors.required">Rellene el campo por favor</div>
+            <div *ngIf="correo.errors.email">Debe de tener un patrón válido</div>
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <label for="contrasena" class="col-form-label col-3">Contrasena</label>
+          <div class="col-6">
+            <!-- <input type="password" class="form-control" [(ngModel)]="usuario.contrasena" name="contrasena" required minlength="1" #contrasena="ngModel"> -->
+            <input type="password" class="form-control" [(ngModel)]="usuario.contrasena" name="contrasena" #contrasena="ngModel">
+          </div>
+          <div class="alert alert-danger" *ngIf="contrasena.invalid && (contrasena.dirty || contrasena.touched)">
+            <div *ngIf="contrasena.errors.required">Rellene el campo por favor</div>
+            <div *ngIf="contrasena.errors.minlength">Debe de tener un mínimo de tres caracteres</div>
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <label for="nombre" class="col-form-label col-3">Nombre</label>
+          <div class="col-6">
+            <input type="text" class="form-control" [(ngModel)]="usuariodetalle.nombre" name="nombre" #nombre="ngModel">
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <label for="apellidos" class="col-form-label col-3">Apellidos</label>
+          <div class="col-6">
+            <input type="text" class="form-control" [(ngModel)]="usuariodetalle.apellidos" name="apellidos" #nombre="ngModel">
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <label for="rol" class="col-form-label col-3 mb-3">Rol</label>
+          <div class="col-6">
+            <input type="text" class="form-control" [(ngModel)]="usuariodetalle.rol" name="rol" #nombre="ngModel">
+          </div>
+        </div>
+
+
+        <div class="form-group row">
+          <div class="col-7">
+            <button class="btn btn-primary" role="button" (click)="create()" *ngIf="!usuario.id else elseBlock" [disabled]="!formularioUsuario.form.valid">Crear</button>
+            <ng-template #elseBlock>
+              <button class="btn btn-light" role="button" (click)="update()" [disabled]="!formularioUsuario.form.valid">Editar</button>
+            </ng-template>
+          </div>
+        </div>
+        </form>
+      </div>
+
+    </div>
+  </div>
+  <div class="col-3"></div>
+
+</div>
