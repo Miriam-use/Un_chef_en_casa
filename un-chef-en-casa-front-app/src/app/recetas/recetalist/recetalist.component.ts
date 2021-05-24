@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import swal from 'sweetalert2';
 import { Receta } from "../receta";
 import { RecetaService } from "../receta.service";
+import { Usuario } from '../../usuarios/usuario';
 
 @Component({
   selector: 'app-recetalist',
@@ -12,9 +13,12 @@ export class RecetalistComponent implements OnInit {
 
   vehiculos: Receta[];
 
+  usuario: Usuario=new Usuario();
+
   constructor(private busquedaService:RecetaService) { }
 
   ngOnInit(): void {
+    this.usuario=JSON.parse(sessionStorage.getItem("usuariologueado"));
   }
 
   rellenaTablaParcial(campoBusqueda:string){

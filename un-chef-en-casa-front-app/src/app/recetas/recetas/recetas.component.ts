@@ -3,6 +3,7 @@ import { Receta } from "../receta";
 import { RecetaService } from "../receta.service";
 import swal from 'sweetalert2';
 import { tap } from 'rxjs/operators';
+import { Usuario } from '../../usuarios/usuario';
 
 @Component({
   selector: 'app-recetas',
@@ -13,13 +14,15 @@ export class RecetasComponent implements OnInit {
 
   incidencias: Receta[];
 
+  usuario: Usuario=new Usuario();
+
   paginador: any;
 
   constructor(private incidenciaService:RecetaService) { }
 
   ngOnInit(): void {
     this.getAll();
-
+    this.usuario=JSON.parse(sessionStorage.getItem("usuariologueado"));
     /*this.incidenciaService.paramMap.subscribe(params=>{
       let pagina:number=+params.get('pagina');
       if(!pagina){

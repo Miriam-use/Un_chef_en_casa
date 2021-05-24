@@ -7,4 +7,5 @@ export class Receta {
     lista:string;
     pasos:string;
     favorito:number;
+    idusuario:number;
 }

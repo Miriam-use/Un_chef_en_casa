@@ -3,6 +3,7 @@ import { Router, ActivatedRoute } from "@angular/router";
 import Swal from "sweetalert2";
 import { Receta } from "../receta";
 import { RecetaService } from "../receta.service";
+import { Usuario } from '../../usuarios/usuario';
 
 @Component({
   selector: 'app-recetadetalle',
@@ -16,6 +17,10 @@ export class RecetadetalleComponent implements OnInit {
   vehiculo: Receta = new Receta();
   errores: string[];
 
+  usuario: Usuario=new Usuario();
+
+  usuariologin:number;
+
   constructor(
     private vehiculoService: RecetaService,
     private router: Router,
@@ -24,6 +29,7 @@ export class RecetadetalleComponent implements OnInit {
 
   ngOnInit(): void {
     this.cargarReceta();
+    this.usuario=JSON.parse(sessionStorage.getItem("usuariologueado"));
   }
 
   cargarReceta(): void {
@@ -65,6 +71,9 @@ export class RecetadetalleComponent implements OnInit {
   }
 
   create(): void {
+    console.log("Create en el Component")
+    this.guardarUsuario;
+    console.log(this.vehiculo.idusuario);
     this.vehiculoService.create(this.vehiculo).subscribe(
       vehiculo => {
         this.router.navigate(["/receta/tabla/pg/0"]);
@@ -76,6 +85,11 @@ export class RecetadetalleComponent implements OnInit {
         console.error(err.error.errors);
       }
     );
+  }
+
+  guardarUsuario(id:number):void{
+    this.usuariologin = id;
+    this.vehiculo.idusuario = this.usuariologin;
   }
 
 }

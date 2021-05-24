@@ -20,29 +20,33 @@ public class Receta implements Serializable {
 		@GeneratedValue(strategy=GenerationType.IDENTITY)
 		private Long id;
 		
-		@NotEmpty(message ="El campo modelo no puede estar vacio")
+		@NotEmpty(message ="El campo titulo no puede estar vacio")
 		@Column(nullable=false)
 		private String titulo;
 		
-		@NotEmpty(message ="El campo modelo no puede estar vacio")
+		@NotEmpty(message ="El campo detalle no puede estar vacio")
 		@Column(nullable=false)
 		private String detalle;
 		
-		@NotEmpty(message ="El campo modelo no puede estar vacio")
+		@NotEmpty(message ="El campo tiempo no puede estar vacio")
 		@Column(nullable=false)
 		private String tiempo;
 		
-		@NotEmpty(message ="El campo matricula no puede estar vacio")
+		@NotEmpty(message ="El campo mesa no puede estar vacio")
 		@Column(nullable=false, unique=true)
 		private String mesas;
 		
-		@NotEmpty(message ="El campo modelo no puede estar vacio")
+		@NotEmpty(message ="El campo lista no puede estar vacio")
 		@Column(nullable=false)
 		private String lista;
 		
-		@NotEmpty(message ="El campo etiqueta no puede estar vacio")
+		@NotEmpty(message ="El campo paso no puede estar vacio")
 		@Column(nullable=false)
 		private String pasos;
+		
+		@NotEmpty(message ="El campo idusuario no puede estar vacio")
+		@Column(nullable=false)
+		private String idusuario;
 		
 		private int  favorito;
 
@@ -100,6 +104,14 @@ public class Receta implements Serializable {
 
 		public void setPasos(String pasos) {
 			this.pasos = pasos;
+		}
+
+		public String getIdusuario() {
+			return idusuario;
+		}
+
+		public void setIdusuario(String idusuario) {
+			this.idusuario = idusuario;
 		}
 
 		public int getFavorito() {
