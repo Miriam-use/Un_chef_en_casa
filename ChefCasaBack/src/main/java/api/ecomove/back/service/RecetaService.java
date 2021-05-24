@@ -19,5 +19,7 @@ public interface RecetaService {
 	public Receta findRecetaByTitulo(String term);
 	
 	public Receta findRecetaById(String term);
+	
+	public List<Receta>findRecetaById(Long id);
 
 }

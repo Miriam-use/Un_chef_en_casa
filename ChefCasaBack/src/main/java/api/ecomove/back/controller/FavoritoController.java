@@ -62,6 +62,7 @@ public class FavoritoController {
 			}
 			
 			try {
+				
 				favoritoNuevo=this.favoritoservice.save(favorito);
 				
 			}catch(DataAccessException dataEx) {

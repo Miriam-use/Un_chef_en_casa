@@ -52,4 +52,10 @@ public class UsuarioServiceImp implements UsuarioService{
 	public Usuario findByDasatosAndContrasena(String dasatos, String contrasena) {		
 		return this.usuarioDao.findByDasatosAndContrasena(dasatos, contrasena);
 	}
+
+	@Override
+	@Transactional
+	public List<Usuario> findIdentificadorByUsuario(Long id) {
+		return usuarioDao.findIdentificadorByUsuario(id);
+	}
 }

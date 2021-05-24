@@ -12,4 +12,8 @@ public interface FavoritoService {
 	
 	public void delete(Long id);
 	
+	public List<Favorito> findByIdReceta(String receta);
+	
+	public List<Favorito> findByIdUsuario(String usu);
+	
 }

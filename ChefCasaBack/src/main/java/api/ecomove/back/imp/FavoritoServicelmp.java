@@ -32,4 +32,16 @@ public class FavoritoServicelmp implements FavoritoService {
 		this.favoritodao.deleteById(id);
 	}
 
+	@Override
+	@Transactional
+	public List<Favorito> findByIdReceta(String receta) {
+		return favoritodao.findByIdReceta(receta);
+	}
+
+	@Override
+	@Transactional
+	public List<Favorito> findByIdUsuario(String usu) {
+		return favoritodao.findByIdUsuario(usu);
+	}
+
 }

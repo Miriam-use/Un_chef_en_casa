@@ -5,6 +5,9 @@ import { Router, ActivatedRoute } from "@angular/router";
 import jsPDF from 'jspdf';
 import html2canvas from 'html2canvas';
 import { Usuario } from '../../usuarios/usuario';
+import { FavoritoService } from "../favorito/favorito.service";
+import { Favorito } from "../favorito/favorito";
+import Swal from "sweetalert2";
 
 @Component({
   selector: 'app-detallesrecetas',
@@ -17,16 +20,25 @@ export class DetallesrecetasComponent implements OnInit {
 
   usuario: Usuario=new Usuario();
 
+  favorito: Favorito=new Favorito();
+
+  favoritos: Favorito[];
+
   usuariologin:number;
   recetaactual:string;
 
+  errores: string[];
+
   constructor(
     private vehiculoService: RecetaService,
-    private activatedRoute: ActivatedRoute
+    private activatedRoute: ActivatedRoute,
+    private router: Router,
+    private favoritoService: FavoritoService
   ) { }
 
   ngOnInit(): void {
     this.cargarReceta();
+    this.getAllFavorito();
     this.usuario=JSON.parse(sessionStorage.getItem("usuariologueado"));
   }
 
@@ -74,12 +86,38 @@ export class DetallesrecetasComponent implements OnInit {
     });
   }
 
-  guardarUsuario():void{
-    this.usuariologin = this.usuario.id
+  favoritoanadi(): void {
+    console.log("Create en el Component")
+    this.guardarUsuario;
+    this.guardarReceta;
+    console.log(this.favorito.idreceta, this.favorito.idusuario);
+    this.favoritoService.create(this.favorito).subscribe(
+      favorito => {
+        this.router.navigate(["/receta/tabla/pg/0"]);
+        Swal.fire(`Receta Guardada`, `Receta Favorito`, "success");
+      },
+      err => {
+        this.errores = err.error.errors as string[];
+        console.error("Código del error desde el backend: " + err.status);
+        console.error(err.error.errors);
+      }
+    );
   }
 
-  guardarReceta():void{
-    this.recetaactual = this.vehiculo.id;
+  guardarUsuario(id:number):void{
+    this.usuariologin = id;
+    this.favorito.idusuario = this.usuariologin;
+  }
+
+  guardarReceta(id:string):void{
+    this.recetaactual = id;
+    this.favorito.idreceta = this.recetaactual;
+  }
+
+  getAllFavorito(): void{
+    this.favoritoService.getFavoritos().subscribe(
+      favoritos => this.favoritos = favoritos
+    );
   }
 
 }

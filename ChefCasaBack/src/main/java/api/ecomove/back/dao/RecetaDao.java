@@ -19,5 +19,8 @@ public interface RecetaDao extends JpaRepository<Receta, Long> {
 	
 	@Query("select p from Receta p where p.id like %?1%")
 	public Receta findRecetaById(String term);
+	
+	@Query("select p from Receta p where p.id like %?1%")
+	public List<Receta> findRecetaById(Long id);
 
 }

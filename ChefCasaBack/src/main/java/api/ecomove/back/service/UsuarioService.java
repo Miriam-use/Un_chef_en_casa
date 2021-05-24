@@ -20,6 +20,8 @@ public interface UsuarioService {
 	
 	public Usuario findByDasatosAndContrasena(String dasatos, String contrasena);
 	
+	public List<Usuario>findIdentificadorByUsuario(Long id);
+	
 	//public Usuario findByDasatos(String dasatos);
 		
 }
