@@ -17,5 +17,7 @@ public interface RecetaService {
 	public List<Receta> findCocheByTitulo(String term);
 	
 	public Receta findRecetaByTitulo(String term);
+	
+	public Receta findRecetaById(String term);
 
 }

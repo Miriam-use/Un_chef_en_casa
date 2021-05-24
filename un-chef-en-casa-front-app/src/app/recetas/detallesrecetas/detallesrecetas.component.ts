@@ -3,7 +3,8 @@ import { Receta } from "../receta";
 import { RecetaService } from "../receta.service";
 import { Router, ActivatedRoute } from "@angular/router";
 import jsPDF from 'jspdf';
-import html2canvas from 'html2canvas'; // Todavía no lo usamos
+import html2canvas from 'html2canvas';
+import { Usuario } from '../../usuarios/usuario';
 
 @Component({
   selector: 'app-detallesrecetas',
@@ -14,6 +15,11 @@ export class DetallesrecetasComponent implements OnInit {
 
   vehiculo: Receta = new Receta();
 
+  usuario: Usuario=new Usuario();
+
+  usuariologin:number;
+  recetaactual:string;
+
   constructor(
     private vehiculoService: RecetaService,
     private activatedRoute: ActivatedRoute
@@ -21,6 +27,12 @@ export class DetallesrecetasComponent implements OnInit {
 
   ngOnInit(): void {
     this.cargarReceta();
+    this.usuario=JSON.parse(sessionStorage.getItem("usuariologueado"));
+  }
+
+  cargarUsuario():void{
+    console.log(this.usuario.id);
+    console.log(this.vehiculo.id);
   }
 
   // tslint:disable-next-line:typedef
@@ -60,6 +72,14 @@ export class DetallesrecetasComponent implements OnInit {
         });
       }
     });
+  }
+
+  guardarUsuario():void{
+    this.usuariologin = this.usuario.id
+  }
+
+  guardarReceta():void{
+    this.recetaactual = this.vehiculo.id;
   }
 
 }

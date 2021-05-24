@@ -51,6 +51,11 @@ public class RecetaServicelmp implements RecetaService {
 	public Receta findRecetaByTitulo(String term) {
 		return receDao.findRecetaByTitulo(term);
 	}
+
+	@Override
+	public Receta findRecetaById(String term) {
+		return receDao.findRecetaById(term);
+	}
 	
 	
 
