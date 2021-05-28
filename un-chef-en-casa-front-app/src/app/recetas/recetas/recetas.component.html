@@ -49,7 +49,7 @@
                   </td>
                   <td *ngIf="infraccion.idusuario==usuario.id">
                     <button type="button" name="editar" [routerLink]="['/recetadetalle', infraccion.id]"
-                  class="btn btn-outline-secondary btn-sm">
+                  class="btn btn-outline-success">
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                     class="bi bi-pencil-square" viewBox="0 0 16 16">
                     <path
@@ -60,7 +60,7 @@
                 </button>
                   </td>
                   <td *ngIf="infraccion.idusuario==usuario.id">
-                    <button type="button" name="eliminar" (click)='eliminar(infraccion)' class="btn btn-outline-danger btn-sm">
+                    <button type="button" name="eliminar" (click)='eliminar(infraccion)' class="btn btn-outline-danger">
                       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash"
                         viewBox="0 0 16 16">
                         <path
