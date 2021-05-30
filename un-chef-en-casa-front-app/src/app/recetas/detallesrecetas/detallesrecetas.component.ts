@@ -29,6 +29,8 @@ export class DetallesrecetasComponent implements OnInit {
 
   errores: string[];
 
+  esta:boolean=false;
+
   constructor(
     private vehiculoService: RecetaService,
     private activatedRoute: ActivatedRoute,
@@ -40,6 +42,14 @@ export class DetallesrecetasComponent implements OnInit {
     this.cargarReceta();
     this.getAllFavorito();
     this.usuario=JSON.parse(sessionStorage.getItem("usuariologueado"));
+  }
+
+  compro(){
+    this.esta=true;
+  }
+
+  comprovar(id:number, iid:string){
+    console.log(id, iid);
   }
 
   cargarUsuario():void{
@@ -118,6 +128,48 @@ export class DetallesrecetasComponent implements OnInit {
     this.favoritoService.getFavoritos().subscribe(
       favoritos => this.favoritos = favoritos
     );
+  }
+
+  eliminar(favoritos:Favorito):void{
+    const swalWithBootstrapButtons = Swal.mixin({
+      customClass: {
+        confirmButton: 'btn btn-success',
+        cancelButton: 'btn btn-danger mr-3'
+      },
+      buttonsStyling: false
+    })
+    swalWithBootstrapButtons.fire({
+      title: '¿Está seguro?',
+      text: `Eliminando la receta de favorito`,
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonText: 'Eliminar',
+      cancelButtonText: 'Cancelar',
+      reverseButtons: true
+    }).then((result) => {
+      if (result.isConfirmed) {
+        this.favoritoService.eliminar(favoritos.id).subscribe(
+          response=>{
+            this.favoritos=this.favoritos.filter(user=>user!==favoritos)
+            swalWithBootstrapButtons.fire(
+              'Eliminado',
+              `La receta fue eliminado con exíto!`,
+              'success'
+            )
+          }
+        )
+
+      } else if (
+        /* Read more about handling dismissals below */
+        result.dismiss === Swal.DismissReason.cancel
+      ) {
+        swalWithBootstrapButtons.fire(
+          'Cancelado',
+          'Eliminación no realizada',
+          'error'
+        )
+      }
+    })
   }
 
 }

@@ -63,7 +63,7 @@ public class FavoritoController {
 			
 			try {
 				
-				favoritoNuevo=this.favoritoservice.save(favorito);
+					favoritoNuevo=this.favoritoservice.save(favorito);
 				
 			}catch(DataAccessException dataEx) {
 				this.response.put("mensaje","Error al insertar la receta en la base de datos");
@@ -75,7 +75,6 @@ public class FavoritoController {
 			this.response.put("favorito",favoritoNuevo);
 			return new ResponseEntity<Map<String,Object>>(this.response,HttpStatus.CREATED);
 		}
-		
 	
 		//------------------------------------eliminar favorito--------------------------------------------
 		@DeleteMapping("/favorito/baja/{id}")
