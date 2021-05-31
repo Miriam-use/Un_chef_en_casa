@@ -65,7 +65,7 @@
           </div>
         </div>
 
-        <div class="form-group row">
+        <div class="form-group row" *ngIf="usuario.usuariodetalle.rol=='Administrador'">
           <label for="rol" class="col-form-label col-3 mb-3">Rol</label>
           <div class="col-6">
             <input type="text" class="form-control" [(ngModel)]="usuariodetalle.rol" name="rol" #nombre="ngModel">
@@ -73,7 +73,7 @@
         </div>
 
         <div>
-          <p><a routerLink="/usuarios/login">¿Ya tienes cuenta? Ingresa</a></p>
+          <p><a routerLink="/usuarios/login" *ngIf="!usuario.id">¿Ya tienes cuenta? Ingresa</a></p>
         </div>
 
         <div class="form-group row">

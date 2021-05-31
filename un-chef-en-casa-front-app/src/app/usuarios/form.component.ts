@@ -24,6 +24,7 @@ export class FormComponent implements OnInit {
   ){}
 
   ngOnInit(){
+    this.usuario=JSON.parse(sessionStorage.getItem("usuariologueado"));
     this.cargarUsuario();
   }
 

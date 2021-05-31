@@ -26,6 +26,11 @@ img{
   width: 60px;
   padding-left:0px ;
 }
+#receta{
+  padding-right:0px ;
+  width: 100px;
+  padding-left:10px ;
+}
 h4:hover{
   border-bottom:solid 1px #0066A1;
 }

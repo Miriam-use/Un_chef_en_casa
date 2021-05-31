@@ -9,25 +9,27 @@ import { Usuario } from '../usuarios/usuario';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
-export class HeaderComponent implements DoCheck{
+export class HeaderComponent implements DoCheck {
 
   constructor(
-    private router:Router,
-  ){}
+    private router: Router,
+  ) { }
 
-  usuario: Usuario=new Usuario();
-  logueado:boolean=false;
+  usuario: Usuario = new Usuario();
+  logueado: boolean = false;
 
-  ngDoCheck(){
-    this.logueado=sessionStorage.getItem("usuariologueado")?true:false;
+  ngDoCheck() {
+    this.logueado = sessionStorage.getItem("usuariologueado") ? true : false;
+
+    this.usuario=JSON.parse(sessionStorage.getItem("usuariologueado"));
   }
 
-  logOut2(){
+  logOut2() {
     sessionStorage.clear();
     this.router.navigate(['/usuarios/login'])
   }
 
-  logOut(usuario:Usuario):void{
+  logOut(usuario: Usuario): void {
     const swalWithBootstrapButtons = Swal.mixin({
       customClass: {
         confirmButton: 'btn btn-success',
@@ -47,14 +49,14 @@ export class HeaderComponent implements DoCheck{
       if (result.isConfirmed) {
 
         sessionStorage.clear();
-        this.logueado=false;
+        this.logueado = false;
         this.router.navigate(['/usuarios/login']);
         swalWithBootstrapButtons.fire(
           'Log out',
           'Sessión Cerrada',
           'success'
         )
-      } else if (result.dismiss === Swal.DismissReason.cancel) {}
+      } else if (result.dismiss === Swal.DismissReason.cancel) { }
     })
   }
 
