@@ -47,7 +47,7 @@ Ejecuta el BACK en un eclipce con Spring o en la aplicacion que te ofrece Spring
 ## Manuales y documentacion
 - Manual Instalacion - https://github.com/Miriam-use/Un_chef_en_casa/blob/main/manual%20instalacion%20ChefCasa.pdf
 - Manual Uso - https://github.com/Miriam-use/Un_chef_en_casa/blob/main/manual%20uso%20ChefCasa.pdf
-- Memoria Proyecto - 
+- Memoria Proyecto - https://github.com/Miriam-use/Un_chef_en_casa/blob/main/Memoria%20Proyecto%20Final.pdf
 
 ## Authors and Participants
 - Miriam Mateos - mimais95@gmail.com - [GitHub](https://github.com/Miriam-use)
