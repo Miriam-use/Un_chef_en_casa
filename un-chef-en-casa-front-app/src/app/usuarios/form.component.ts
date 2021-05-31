@@ -15,6 +15,7 @@ export class FormComponent implements OnInit {
   usuario: Usuario=new Usuario();
   usuariodetalle: UsuarioDetalle=new UsuarioDetalle();
   titulo: string="Editar Datos";
+  titulos: string="Crear Usuario";
   errores: string[];
 
   constructor(
@@ -24,7 +25,7 @@ export class FormComponent implements OnInit {
   ){}
 
   ngOnInit(){
-    this.usuario=JSON.parse(sessionStorage.getItem("usuariologueado"));
+    //this.usuario=JSON.parse(sessionStorage.getItem("usuariologueado"));
     this.cargarUsuario();
   }
 

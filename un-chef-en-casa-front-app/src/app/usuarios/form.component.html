@@ -4,19 +4,15 @@
 <div class="row col-12 text-center">
 
   <div class="col-3"></div>
-  <div cclass="col-6 fondo text-center divCentral">
-
-    <div class="card-header">
-      <h1 class="pt-3">{{titulo}}</h1>
-    </div>
-
+  <div class="col-6 fondo text-center divCentral">
+    <div class="card-header" *ngIf="!usuario.id"><h1 class="pt-3">{{titulos}}</h1></div>
+    <div class="card-header" *ngIf="usuario.id"><h1 class="pt-3">{{titulo}}</h1></div>
     <div class="cad-body row col-12 text-center">
       <div class="col-4"></div>
       <div class="col-8">
-
         <form #formularioUsuario="ngForm">
         <div class="form-group row mt-3">
-          <label for="dasatos" class="col-form-label col-3">Nombre Usuario</label>
+          <label for="dasatos" class="col-form-label col-3">Usuario</label>
           <div class="col-6">
             <!-- <input type="text" class="form-control" [(ngModel)]="usuario.dasatos" name="dasatos" required minlength="3" #dasatos="ngModel"> -->
             <input type="text" class="form-control" [(ngModel)]="usuario.dasatos" name="dasatos" #dasatos="ngModel">
@@ -65,7 +61,7 @@
           </div>
         </div>
 
-        <div class="form-group row" *ngIf="usuario.usuariodetalle.rol=='Administrador'">
+        <div class="form-group row">
           <label for="rol" class="col-form-label col-3 mb-3">Rol</label>
           <div class="col-6">
             <input type="text" class="form-control" [(ngModel)]="usuariodetalle.rol" name="rol" #nombre="ngModel">
@@ -78,10 +74,10 @@
 
         <div class="form-group row">
           <div class="col-7">
-            <button class="btn btn-primary" role="button" (click)="create()" *ngIf="!usuario.id else elseBlock" [disabled]="!formularioUsuario.form.valid">Crear</button>
-            <ng-template #elseBlock>
-              <button class="btn btn-light" role="button" (click)="update()" [disabled]="!formularioUsuario.form.valid">Editar</button>
-            </ng-template>
+            <button class="btn btn-primary" role="button" (click)="create()" *ngIf="!usuario.id" [disabled]="!formularioUsuario.form.valid">Crear</button>
+            
+              <button class="btn btn-light" role="button" (click)="update()" *ngIf="usuario.id" [disabled]="!formularioUsuario.form.valid">Editar</button>
+            
           </div>
         </div>
         </form>
