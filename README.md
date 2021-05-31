@@ -45,9 +45,9 @@ Ejecuta el BACK en un eclipce con Spring o en la aplicacion que te ofrece Spring
 - MySQL
 
 ## Manuales y documentacion
-- Manual de Instalacion - https://github.com/Miriam-use/Un_chef_en_casa/blob/main/manual%20instalacion%20ChefCasa.pdf
-- Manual de Uso - https://github.com/Miriam-use/Un_chef_en_casa/blob/main/manual%20uso%20ChefCasa.pdf
-- Memoria de Proyecto - 
+- Manual Instalacion - https://github.com/Miriam-use/Un_chef_en_casa/blob/main/manual%20instalacion%20ChefCasa.pdf
+- Manual Uso - https://github.com/Miriam-use/Un_chef_en_casa/blob/main/manual%20uso%20ChefCasa.pdf
+- Memoria Proyecto - 
 
 ## Authors and Participants
 - Miriam Mateos - mimais95@gmail.com - [GitHub](https://github.com/Miriam-use)
