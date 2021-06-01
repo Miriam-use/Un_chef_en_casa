@@ -1,7 +1,7 @@
-import { Viajes } from './viajes';
+import { Viaje } from './viaje';
 
 describe('Viajes', () => {
   it('should create an instance', () => {
-    expect(new Viajes()).toBeTruthy();
+    expect(new Viaje()).toBeTruthy();
   });
 });

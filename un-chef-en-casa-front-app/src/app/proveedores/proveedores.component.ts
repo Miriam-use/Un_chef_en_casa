@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { Proveedor } from './proveedor'
+import { ProveedorService } from './proveedor.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-proveedores',
@@ -7,8 +10,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProveedoresComponent implements OnInit {
 
-  constructor() { }
+  proveedores: Proveedor[];
+
+  constructor(private proveedorService:ProveedorService, private router:Router) { }
 
   ngOnInit(): void {
+    this.cargarProveedores();
+  }
+
+  cargarProveedores():void{
+    this.proveedorService.getProveedores().subscribe(proveedores=>this.proveedores=proveedores);
   }
 }
