@@ -7,10 +7,9 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
-import api.cocinacasa.back.entity.Viaje;
 
 @Repository
-public interface DashboardDao extends JpaRepository<Viaje, Long>{
+public interface DashboardDao {
 	
 	@Query(value="select A.totalviajeseco, B.totalviajesnoeco, C.viajescero,D.viajeseco,E.viajesc,F.viajesb,G.viajessin, H.ecocoins, I.kmeco, J.kmnoeco from " + 
 			"(select count(*) totalviajeseco from viajesuber " + 
@@ -57,19 +56,6 @@ public interface DashboardDao extends JpaRepository<Viaje, Long>{
 			"where usuario like ?1 " + 
 			"and tipotransporte like 'Sin Etiqueta')J",nativeQuery = true)
 	public Map<String,String> findDatosDashboard(Long idusuario);
-	
-	@Query(value="select * from viajesuber "
-			+ "where tipotransporte is not null "
-			+ "and tipotransporte not like 'Sin Etiqueta' "
-			+"and status like 'completed' "
-			+ "and usuario like ?1",nativeQuery = true)
-	public List<Viaje> findViajesEcologicos(Long idusuario);
-	
-	@Query(value="select * from viajesuber "
-			+ "where tipotransporte is not null "
-			+"and status like 'completed' "
-			+ "and usuario like ?1",nativeQuery = true)
-	public List<Viaje> findViajesUsuarioCompletados(Long idusuario);
 	
 
 }

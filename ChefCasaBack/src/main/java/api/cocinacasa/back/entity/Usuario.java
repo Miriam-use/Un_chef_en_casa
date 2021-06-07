@@ -40,7 +40,7 @@ public class Usuario implements Serializable{
 	public Usuario(Long id,
 			@NotEmpty(message = "no puede estar vacío") @Size(min = 4, max = 8, message = "rango de caracteres-> de 4 a 8") String dasatos,
 			@NotEmpty(message = "no puede estar vacío") String correo,
-			@NotEmpty(message = "es requerido") String contrasena, UsuarioDetalle usuariodetalle, List<Viaje> viaje,
+			@NotEmpty(message = "es requerido") String contrasena, UsuarioDetalle usuariodetalle,
 			Date createAt, Boolean enabled, List<Role> roles, String bcaddress) {
 		super();
 		this.id = id;
@@ -48,7 +48,6 @@ public class Usuario implements Serializable{
 		this.correo = correo;
 		this.contrasena = contrasena;
 		this.usuariodetalle = usuariodetalle;
-		this.viaje = viaje;
 		this.createAt = createAt;
 		this.enabled = enabled;
 		this.roles = roles;
@@ -81,11 +80,6 @@ public class Usuario implements Serializable{
 	@JoinColumn(name="usuariodetalle",referencedColumnName="idtableusuariosdetalle")
 	@JsonIgnoreProperties({"hibernateLazyInitializer","handler"})
 	private UsuarioDetalle usuariodetalle;
-	
-	@OneToMany(mappedBy="usuario",fetch=FetchType.LAZY)
-	@JsonIgnoreProperties({"hibernateLazyInitializer","handler"})
-	@JsonIgnore
-	private List<Viaje> viaje;
 	
 	//@NotNull(message="se requiere una fecha")
 	@Column(name="create_at",nullable=false)
@@ -155,14 +149,6 @@ public class Usuario implements Serializable{
 
 	public void setCreateAt(Date createAt) {
 		this.createAt = createAt;
-	}
-
-	public List<Viaje> getViaje() {
-		return viaje;
-	}
-
-	public void setViaje(List<Viaje> viaje) {
-		this.viaje = viaje;
 	}
 
 	public Boolean getEnabled() {
