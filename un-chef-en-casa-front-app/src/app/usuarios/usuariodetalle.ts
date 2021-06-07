@@ -5,5 +5,7 @@ export class UsuarioDetalle {
   usuario: Usuario;
   nombre: string;
   apellidos: string;
+  pais: string;
+  localidad: string;
   rol: string;
 }

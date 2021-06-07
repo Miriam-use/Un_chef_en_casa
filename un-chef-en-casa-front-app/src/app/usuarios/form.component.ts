@@ -18,6 +18,8 @@ export class FormComponent implements OnInit {
   titulos: string="Crear Usuario";
   errores: string[];
 
+  detalle:string;
+
   constructor(
     private usuarioService:UsuarioService,
     private router:Router,

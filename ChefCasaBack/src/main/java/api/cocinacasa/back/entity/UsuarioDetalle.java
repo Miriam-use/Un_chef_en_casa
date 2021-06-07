@@ -25,13 +25,13 @@ public class UsuarioDetalle implements Serializable{
 		
 	}
 		
-	public UsuarioDetalle(Long id, String nombre, String apellidos, String direccion, String oficina, String rol) {
+	public UsuarioDetalle(Long id, String nombre, String apellidos, String pais, String localidad, String rol) {
 		super();
 		this.id = id;
 		this.nombre = nombre;
 		this.apellidos = apellidos;
-		this.direccion = direccion;
-		this.oficina = oficina;
+		this.pais = pais;
+		this.localidad = localidad;
 		this.rol = rol;
 	}
 /*
@@ -66,9 +66,9 @@ public class UsuarioDetalle implements Serializable{
 	
 	private String apellidos;
 	
-	private String direccion;
+	private String pais;
 	
-	private String oficina;
+	private String localidad;
 	
 	private String rol;
 	
@@ -108,20 +108,20 @@ public class UsuarioDetalle implements Serializable{
 		this.apellidos = apellidos;
 	}
 
-	public String getDireccion() {
-		return direccion;
+	public String getPais() {
+		return pais;
 	}
 
-	public void setDireccion(String direccion) {
-		this.direccion = direccion;
+	public void setPais(String pais) {
+		this.pais = pais;
 	}
 
-	public String getOficina() {
-		return oficina;
+	public String getLocalidad() {
+		return localidad;
 	}
 
-	public void setOficina(String oficina) {
-		this.oficina = oficina;
+	public void setLocalidad(String localidad) {
+		this.localidad = localidad;
 	}
 
 	public String getRol() {
