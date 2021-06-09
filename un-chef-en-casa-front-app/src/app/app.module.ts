@@ -16,18 +16,13 @@ import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
 import { UsuariosComponent } from './usuarios/usuarios.component';
 import { FormComponent } from './usuarios/form.component';
-import { ViajesComponent } from './viajes/viajes.component';
 import { LoginComponent } from './usuarios/login.component';
-import { FormnuevoviajeuberComponent } from './viajes/formnuevoviajeuber.component';
-import { ProveedoresComponent } from './proveedores/proveedores.component';
 import { UsuariodetalleComponent } from './usuarios/usuariodetalle.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 
 import { PaginatorComponent } from './paginator/paginator.component'
 
 import { UsuarioService } from './usuarios/usuario.service';
-import { ViajeService } from './viajes/viaje.service';
-import { ProveedorService } from './proveedores/proveedor.service';
 import { DashboardService } from './dashboard/dashboard.service';
 //import { ContractsService } from './contracts/contracts.service';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
@@ -48,11 +43,6 @@ const routes: Routes=[
   {path:'usuarios/form/:id',component:FormComponent},
   {path:'usuarios/login',component:LoginComponent},
   {path:'usuarios/detalle',component:UsuariodetalleComponent},
-  {path:'viajes',component:ViajesComponent},
-  {path:'viajes/pg/:pagina',component:ViajesComponent},
-  {path:'viajes/detalle',component:ViajesComponent},
-  {path:'viajes/formnuevoviajeuber',component:FormnuevoviajeuberComponent},
-  {path:'proveedores',component:ProveedoresComponent},
   {path:'dashboard',component:DashboardComponent},
   {path:'recetadetalle',component:RecetadetalleComponent},
   {path:'recetadetalle/:id',component:RecetadetalleComponent},
@@ -67,11 +57,8 @@ const routes: Routes=[
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    ViajesComponent,
     UsuariosComponent,
     FormComponent,
-    FormnuevoviajeuberComponent,
-    ProveedoresComponent,
     PaginatorComponent,
     HomeComponent,
     LoginComponent,
@@ -96,8 +83,6 @@ const routes: Routes=[
   ],
   providers: [
     UsuarioService,
-    ViajeService,
-    ProveedorService,
     FormComponent,
     DashboardService,
 //    ContractsService,
